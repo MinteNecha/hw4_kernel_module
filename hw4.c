@@ -36,7 +36,7 @@ static ssize_t dev_read(struct file *fileptr, char __user *buffer, size_t len, l
 
 static ssize_t dev_write(struct file *fileptr, const char __user *buffer, size_t len, loff_t *offset){
 	int size = (len < 256) ? len : 255;
-	if(copy_to_user(msg, buffer, size)) return -EFAULT;
+	if(copy_from_user(msg, buffer, size)) return -EFAULT;
 	msg[size] = '\0';
 	return len;
 }
