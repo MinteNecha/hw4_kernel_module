@@ -1,0 +1,4 @@
+This is a LKM that registers a device, allows read and write to and from the device.
+
+To run:
+  " sudo bash run.sh "
